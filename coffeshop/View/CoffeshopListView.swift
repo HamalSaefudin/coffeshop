@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var search:String = "";
     
     private var coffeshopSearchResult:[CoffeshopModel]{
-        let result =  CoffeshopModel.CoffeshopModelProvider.getAll()
+        let result =  CoffeshopModelProvider.getAll()
         if search.isEmpty{
             return result;
         }
