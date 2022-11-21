@@ -23,7 +23,6 @@ struct ContentView: View {
     }
     
     private var suggestedResult:[CoffeshopModel]{
-        let res = CoffeshopModel.CoffeshopModelProvider.getAll();
         
         if search.isEmpty{
             return []
