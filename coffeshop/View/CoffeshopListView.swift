@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CoffeshopListView: View {
     //    MARK: - PROPERTIES
     @State private var search:String = "";
     
@@ -80,6 +80,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CoffeshopListView()
     }
 }

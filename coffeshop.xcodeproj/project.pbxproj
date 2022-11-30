@@ -13,6 +13,7 @@
 		DC34053C2927F5970088E88F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC34053B2927F5970088E88F /* Preview Assets.xcassets */; };
 		DC3405452927F72C0088E88F /* CoffeshopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3405442927F72C0088E88F /* CoffeshopModel.swift */; };
 		DC34054D2929EB800088E88F /* CoffeshopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34054C2929EB800088E88F /* CoffeshopDetailView.swift */; };
+		DCFE9C6629370BBC00D9B99A /* CoffeshopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE9C6529370BBC00D9B99A /* CoffeshopMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DC34053B2927F5970088E88F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC3405442927F72C0088E88F /* CoffeshopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeshopModel.swift; sourceTree = "<group>"; };
 		DC34054C2929EB800088E88F /* CoffeshopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeshopDetailView.swift; sourceTree = "<group>"; };
+		DCFE9C6529370BBC00D9B99A /* CoffeshopMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeshopMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				DC3405362927F5960088E88F /* CoffeshopListView.swift */,
 				DC34054C2929EB800088E88F /* CoffeshopDetailView.swift */,
+				DCFE9C6529370BBC00D9B99A /* CoffeshopMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFE9C6629370BBC00D9B99A /* CoffeshopMainView.swift in Sources */,
 				DC3405452927F72C0088E88F /* CoffeshopModel.swift in Sources */,
 				DC3405372927F5960088E88F /* CoffeshopListView.swift in Sources */,
 				DC3405352927F5960088E88F /* coffeshopApp.swift in Sources */,
