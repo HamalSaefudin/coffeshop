@@ -10,34 +10,39 @@ import SwiftUI
 struct CoffeshopMainView: View {
     @State private var tabSelected:EnumTabs = .browse
     var body: some View {
-        TabView(selection:$tabSelected){
-            CoffeshopListView()
-                .listStyle(.plain)
-                .tabItem{
-                    Image(systemName: "square.grid.2x2")
-                    Text(EnumTabs.browse.rawValue.uppercased())
-                }
-                .tag(EnumTabs.browse)
-            Text(EnumTabs.watch.rawValue.uppercased())
-                .tabItem{
-                    Image(systemName: "play.rectangle")
-                    Text(EnumTabs.watch.rawValue.uppercased())
-                }
-                .tag(EnumTabs.watch)
-            Text(EnumTabs.loans.rawValue.uppercased())
-                .tabItem{
-                    Image(systemName: "rectangle.and.text.magnifyingglass")
-                    Text(EnumTabs.loans.rawValue.uppercased())
-                }
-                .tag(EnumTabs.loans)
-            Text(EnumTabs.profile.rawValue.uppercased())
-                .tabItem{
-                    Image(systemName: "person")
-                    Text(EnumTabs.profile.rawValue.uppercased())
-                }
-                .tag(EnumTabs.profile)
-            
-        }.tint(.indigo)
+        NavigationStack {
+            TabView(selection:$tabSelected){
+                CoffeshopListView()
+                    .listStyle(.plain)
+                    .tabItem{
+                        Image(systemName: "square.grid.2x2")
+                        Text(EnumTabs.browse.rawValue.uppercased())
+                    }
+                
+                    .tag(EnumTabs.browse)
+                Text(EnumTabs.watch.rawValue.uppercased())
+                    .tabItem{
+                        Image(systemName: "play.rectangle")
+                        Text(EnumTabs.watch.rawValue.uppercased())
+                    }
+                    .tag(EnumTabs.watch)
+                Text(EnumTabs.loans.rawValue.uppercased())
+                    .tabItem{
+                        Image(systemName: "rectangle.and.text.magnifyingglass")
+                        Text(EnumTabs.loans.rawValue.uppercased())
+                    }
+                    .tag(EnumTabs.loans)
+                Text(EnumTabs.profile.rawValue.uppercased())
+                    .tabItem{
+                        Image(systemName: "person")
+                        Text(EnumTabs.profile.rawValue.uppercased())
+                    }
+                    .tag(EnumTabs.profile)
+                
+            }
+            .tint(.indigo)
+            .navigationTitle(tabSelected.rawValue.uppercased())
+        }
     }
 }
 
@@ -53,4 +58,16 @@ enum EnumTabs:String{
     case watch
     case loans
     case profile
+}
+
+extension View {
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content)
+        -> some View
+    {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
 }
