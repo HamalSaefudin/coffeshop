@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import ActivityView
 
 struct CoffeshopListView: View {
     //    MARK: - PROPERTIES
     @State private var search:String = "";
     @State var isAlert:Bool = false
+    
     
     
     private var coffeshopSearchResult:[CoffeshopModel]{
@@ -37,11 +39,16 @@ struct CoffeshopListView: View {
     }
     var body: some View {
         NavigationStack{
-            List(coffeshopSearchResult) { result in
-                ZStack(alignment: .leading){
-                    NavigationLink(destination: CoffeshopDetailView(coffeshopDetail: result),label: {
-                        CoffeshopItem(result: result,onPinPress: showAlertOnPinPress)
-                    })
+            List {
+                ForEach(coffeshopSearchResult){ result in
+                    ZStack(alignment: .leading){
+                        NavigationLink(destination: CoffeshopDetailView(coffeshopDetail: result),label: {
+                            CoffeshopItem(result: result,onPinPress: showAlertOnPinPress)
+                        })
+                        
+                    }
+                }
+                .onDelete{ indexSet in
                     
                 }
             }
@@ -57,6 +64,7 @@ struct CoffeshopListView: View {
                         .searchCompletion(result.name)
                 }
             }
+            .navigationTitle("Browse")
             
         }//:NAV
         .alert("Not Yet Available", isPresented: $isAlert){
@@ -80,6 +88,8 @@ struct ContentView_Previews: PreviewProvider {
 struct CoffeshopItem: View {
     @State var result:CoffeshopModel
     @State var onPinPress:()->Void
+    @State private var item:ActivityItem?
+    
     var body: some View {
         HStack{
             Image(result.image)
@@ -119,7 +129,9 @@ struct CoffeshopItem: View {
                 Image(systemName: result.isFavorit ? "heart.slash.fill" : "heart.fill")
             }.tint(.green)
             
-            Button {} label:{
+            Button {
+                item = ActivityItem(items: "Share information about \(result.name)")
+            } label:{
                 Image(systemName: "square.and.arrow.up")
             }.tint(.indigo)
         }
@@ -134,13 +146,14 @@ struct CoffeshopItem: View {
             }
             
             Button {
-                
+                item = ActivityItem(items: "Share information about \(result.name)")
             } label:{
                 HStack{
                     Image(systemName: "square.and.arrow.up")
                     Text("Share")
                 }
             }
+            
             
             Button {
                 result.isFavorit.toggle()
@@ -151,5 +164,6 @@ struct CoffeshopItem: View {
                 }
             }
         }
+        .activitySheet($item)
     }
 }

@@ -14,6 +14,7 @@
 		DC3405452927F72C0088E88F /* CoffeshopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3405442927F72C0088E88F /* CoffeshopModel.swift */; };
 		DC34054D2929EB800088E88F /* CoffeshopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34054C2929EB800088E88F /* CoffeshopDetailView.swift */; };
 		DCFE9C6629370BBC00D9B99A /* CoffeshopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE9C6529370BBC00D9B99A /* CoffeshopMainView.swift */; };
+		DCFE9C6D29374D6E00D9B99A /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = DCFE9C6C29374D6E00D9B99A /* ActivityView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFE9C6D29374D6E00D9B99A /* ActivityView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,9 @@
 			dependencies = (
 			);
 			name = coffeshop;
+			packageProductDependencies = (
+				DCFE9C6C29374D6E00D9B99A /* ActivityView */,
+			);
 			productName = coffeshop;
 			productReference = DC3405312927F5960088E88F /* coffeshop.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +141,9 @@
 				Base,
 			);
 			mainGroup = DC3405282927F5960088E88F;
+			packageReferences = (
+				DCFE9C6B29374D6E00D9B99A /* XCRemoteSwiftPackageReference "ActivityView" */,
+			);
 			productRefGroup = DC3405322927F5960088E88F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCFE9C6B29374D6E00D9B99A /* XCRemoteSwiftPackageReference "ActivityView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCFE9C6C29374D6E00D9B99A /* ActivityView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFE9C6B29374D6E00D9B99A /* XCRemoteSwiftPackageReference "ActivityView" */;
+			productName = ActivityView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC3405292927F5960088E88F /* Project object */;
 }
