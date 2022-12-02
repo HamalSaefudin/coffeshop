@@ -71,7 +71,7 @@ struct CoffeshopListView: View {
             Button {
                 
             } label: {
-                Text("Ok")
+                Text("🆗Buddy👌🏻")
             }
         } message: {
             Text("Sorry, this feature is not available yet")
