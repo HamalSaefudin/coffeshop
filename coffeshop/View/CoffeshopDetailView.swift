@@ -77,6 +77,7 @@ struct CoffeshopDetailView: View {
             }
             
         }
+        .toolbar(.hidden,for: .tabBar)
     }
 }
 

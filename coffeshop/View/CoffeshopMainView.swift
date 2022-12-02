@@ -17,7 +17,6 @@ struct CoffeshopMainView: View {
                     Image(systemName: "square.grid.2x2")
                     Text(EnumTabs.browse.rawValue.uppercased())
                 }
-            
                 .tag(EnumTabs.browse)
             Text(EnumTabs.watch.rawValue.uppercased())
                 .tabItem{

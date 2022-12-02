@@ -122,7 +122,7 @@ struct CoffeshopItem: View {
                     .foregroundColor(.gray)
             }.padding()
         }//HStack
-        .swipeActions(edge: .leading,allowsFullSwipe: false){
+        .swipeActions(edge: .leading, allowsFullSwipe: false){
             Button {
                 result.isFavorit.toggle()
             } label:{
